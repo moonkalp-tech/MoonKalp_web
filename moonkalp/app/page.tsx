@@ -1,5 +1,7 @@
 import type { CSSProperties } from "react";
 import Reveal from "@/components/Reveal";
+import Rail from "@/components/Rail";
+import ContactForm from "@/components/ContactForm";
 
 const v = (i: number) => ({ "--i": i } as CSSProperties);
 const ticker = ["Scroll-stopping reels", "Honest storytelling", "Planned to the frame", "Ads that bring inquiries", "Reports you can read"];
@@ -36,11 +38,6 @@ const plans: [string, string, string, string[]][] = [
   ["Start here", "Audit & plan", "a page-by-page look at where you stand, and what to fix first.", ["Social audit", "Website audit", "Growth plan"]],
 ];
 const monthly = ["A content calendar, approved before anything goes live", "Reels and posts, published on fixed days", "Scripts and captions written for your audience", "Planned shoot sessions", "Meta ads set up, tracked and improved", "Two rounds of changes on every creative", "A shared workspace with your own login", "One clear report, every single month"];
-
-async function send(fd: FormData) {
-  "use server";
-  console.log("New inquiry:", Object.fromEntries(fd)); // wire to Resend / Formspree / your CRM
-}
 
 export default function Home() {
   return (
@@ -102,12 +99,11 @@ export default function Home() {
 
       <section id="playground" className="dk">
         <Reveal><h2 className="d h2">How a reel is born</h2><p className="lead mut" style={{ margin: "16px 0 48px", maxWidth: "40ch" }}>every reel starts on paper. here's what a 40-second storyboard looks like before a single frame moves.</p></Reveal>
-        <div className="rail">
+        <Rail>
           {story.map(([k, time, big, d]) => (
             <div key={k} className="card"><p className="lbl o">{k} · {time}</p><h3 className="d h3" style={{ margin: "48px 0 16px" }}>{big}</h3><p className="mut">{d}</p></div>
           ))}
-        </div>
-        <p className="lbl mut" style={{ margin: "16px 0 64px" }}>← swipe the storyboard →</p>
+        </Rail>
         <div className="grid">
           {formats.map(([f, t]) => <div key={f} className="cell"><p className="lbl o">{f}</p><h3 className="d h3" style={{ marginTop: 40 }}>{t}</h3></div>)}
         </div>
@@ -139,20 +135,7 @@ export default function Home() {
 
       <section id="contact" className="dk">
         <Reveal><h2 className="d h1">Let's talk</h2><p className="lead mut" style={{ margin: "16px 0 56px", maxWidth: "40ch" }}>Got a project, a hard problem, or just want to say hi? Send it. We read every single message.</p></Reveal>
-        <form action={send} className="form">
-          <input name="name" placeholder="Your name" required />
-          <input name="phone" placeholder="Phone / WhatsApp" required />
-          <input name="business" placeholder="Business name (optional)" />
-          <fieldset>
-            <legend className="lbl">What do you need?</legend>
-            {["Reels", "Video", "Social", "Ads", "SEO", "Website"].map((n) => (
-              <label key={n} className="chip"><input type="radio" name="need" value={n} /><span>{n}</span></label>
-            ))}
-          </fieldset>
-          <textarea name="story" rows={4} placeholder="Tell us a story, or a project idea…" />
-          <label className="agree"><input type="checkbox" required /> I agree that MoonKalp may contact me about this request.</label>
-          <button className="btn" type="submit">Send it</button>
-        </form>
+        <ContactForm />
       </section>
 
       <footer className="ft dk">
