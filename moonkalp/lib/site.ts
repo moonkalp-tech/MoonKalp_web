@@ -3,8 +3,10 @@
 export const site = {
   email: "moonkalp.tech@gmail.com",
   phone: "+91 88057 58841",
-  whatsapp: "https://wa.me/910000000000",
-  social: [["Instagram", "https://instagram.com/"], ["LinkedIn", "https://linkedin.com/"], ["YouTube", "https://youtube.com/"]] as [string, string][],
+  whatsapp: "https://wa.me/8805758841",
+  // address: ["MoonKalp · CreativeFlow Studio", "Street address, City, State"],
+  // hours: "Mon to Sat · 10:00 to 19:00 IST",
+  // social: [["Instagram", "https://instagram.com/"], ["LinkedIn", "https://linkedin.com/"], ["YouTube", "https://youtube.com/"]] as [string, string][],
   teamIntro: "A small team that sweats the script, the timing and the last frame. You'll talk to the people who actually make your work.",
 };
 
