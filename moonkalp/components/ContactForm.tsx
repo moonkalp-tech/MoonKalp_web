@@ -24,7 +24,7 @@ export default function ContactForm() {
       <input name="business" placeholder="Business name (optional)" defaultValue={v.business} />
       <fieldset>
         <legend className="lbl">What do you need?</legend>
-        {["Reels", "Video", "Social", "Ads", "SEO", "Website"].map((n) => (
+        {["Reels", "Video", "Social", "Ads", "SEO", "Website", "Web app"].map((n) => (
           <label key={n} className="chip"><input type="radio" name="need" value={n} defaultChecked={v.need === n} /><span>{n}</span></label>
         ))}
       </fieldset>

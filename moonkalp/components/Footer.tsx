@@ -34,7 +34,11 @@ export default function Footer() {
           <a href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a>
           <a href={site.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp us ↗</a>
         </div>
+
+        {/*<div><h4 className="lbl">Follow</h4>{site.social.map(([n, u]) => <a key={n} href={u} target="_blank" rel="noopener noreferrer">{n} ↗</a>)}</div>*/}
+
         <div><h4 className="lbl">Follow</h4>{site.social.map(([n, u]) => <a key={n} href={u} target="_blank" rel="noopener noreferrer">{n} ↗</a>)}</div>
+
         <div><h4 className="lbl">Explore</h4>{[["Services", "#services"], ["Process", "#process"], ["Ways to work", "#ways"], ["Contact", "#contact"]].map(([n, h]) => <a key={n} href={h}>{n}</a>)}</div>
       </div>
 

@@ -18,9 +18,15 @@ function Timecode() {
 }
 
 const reels = [
+
+  { c: "a", l: "Reel", t: "Is it just me?", cap: "Hook · 00:00", dur: "5s" },
+  { c: "b", l: "Website", t: "Mobile first.", cap: "yourbrand.com", dur: "7s" },
+  { c: "c", l: "Software", t: "Built around you.", cap: "Custom app · v1.0", dur: "6s" },
+
   { c: "a", t: "Is it just me?", cap: "Hook · 00:00", dur: "5s" },
   { c: "b", t: "You're not alone.", cap: "Turn · 00:12", dur: "7s" },
   { c: "c", t: "Book today.", cap: "Action · 00:36", dur: "6s" },
+
 ];
 
 export default function Hero() {
