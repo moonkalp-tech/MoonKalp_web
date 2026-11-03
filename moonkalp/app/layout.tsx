@@ -1,4 +1,8 @@
+
 import type { Metadata, Viewport } from "next";
+
+import type { Metadata } from "next";
+
 import { Archivo, Noto_Sans, Caveat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";

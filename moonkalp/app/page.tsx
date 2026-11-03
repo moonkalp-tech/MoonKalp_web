@@ -5,7 +5,11 @@ import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
 
+
 const ticker = ["Scroll-stopping reels", "Fast websites", "Custom software", "Ads that bring inquiries", "Honest storytelling", "Reports you can read"];
+
+const ticker = ["Scroll-stopping reels", "Honest storytelling", "Planned to the frame", "Ads that bring inquiries", "Reports you can read"];
+
 const audience = [
   ["Clinics & healthcare", "sensitive topics, told with care"], ["Schools & coaching", "admissions, events, results"],
   ["Cafés & restaurants", "make them hungry in 3 seconds"], ["Real estate", "walkthroughs that sell the feeling"],

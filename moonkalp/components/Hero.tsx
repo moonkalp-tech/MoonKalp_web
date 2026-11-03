@@ -18,9 +18,15 @@ function Timecode() {
 }
 
 const reels = [
+
   { c: "a", l: "Reel", t: "Is it just me?", cap: "Hook · 00:00", dur: "5s" },
   { c: "b", l: "Website", t: "Mobile first.", cap: "yourbrand.com", dur: "7s" },
   { c: "c", l: "Software", t: "Built around you.", cap: "Custom app · v1.0", dur: "6s" },
+
+  { c: "a", t: "Is it just me?", cap: "Hook · 00:00", dur: "5s" },
+  { c: "b", t: "You're not alone.", cap: "Turn · 00:12", dur: "7s" },
+  { c: "c", t: "Book today.", cap: "Action · 00:36", dur: "6s" },
+
 ];
 
 export default function Hero() {
@@ -38,7 +44,7 @@ export default function Hero() {
       <div className="vf lbl" aria-hidden>
         <i /><i /><i /><i />
         <span className="rec fi" style={css({ "--dl": "2.2s" })}>REC <Timecode /></span>
-        <span className="r fi" style={css({ "--dl": "2.4s" })}>Reels · Websites · Software</span>
+        <span className="r fi" style={css({ "--dl": "2.4s" })}>24 fps · 9:16 · Reel 01</span>
         <span className="b cue fi" style={css({ "--dl": "2.8s" })}>Scroll to play</span>
         <span className="b2 fi" style={css({ "--dl": "2.8s" })}>Open to new projects and good stories</span>
       </div>
@@ -47,17 +53,17 @@ export default function Hero() {
       <div className="copy">
         <p className="lbl o fi" style={css({ "--dl": "1.4s" })}>Creative Tech Studio · CreativeFlow Studio</p>
         <h1 className="d hl">
-          <span className="ln"><i style={css({ "--i": 0 })}>We make, build</i></span>
-          <span className="ln"><i style={css({ "--i": 1 })}>and grow things</i></span>
+          <span className="ln"><i style={css({ "--i": 0 })}>We make content</i></span>
+          <span className="ln"><i style={css({ "--i": 1 })}>people actually</i></span>
           <span className="ln"><i style={css({ "--i": 2 })}>
-            people <em>stop for.
+            <em>stop for.
               <svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden><path pathLength={1} d="M4 14 C 50 3, 110 18, 170 8 S 260 14, 296 5" /></svg>
             </em>
           </i></span>
         </h1>
         <p className="note fi" style={css({ "--dl": "3s" })}>
           <svg viewBox="0 0 50 40" aria-hidden><path d="M44 36 C 28 38, 8 28, 6 6 M6 6 L1 17 M6 6 L17 11" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
-          made by humans,<br />no templates. ever.
+          made by humans,<br />no stock footage. ever.
         </p>
         <div className="cta fi" style={css({ "--dl": "2s" })}>
           <a className="btn" href="#services">Our services</a>
@@ -69,7 +75,7 @@ export default function Hero() {
         {reels.map((r, k) => (
           <div key={r.c} className={`rc ${r.c}`} style={css({ "--k": k })}>
             <div className="rc-in">
-              <small><b>● {r.l}</b><b>0{k + 1}</b></small>
+              <small><b>● Reel</b><b>0{k + 1}</b></small>
               <p className="tx">{r.t}</p>
               <div><div className="bar" style={css({ "--t": r.dur })} /><small style={{ marginTop: 8 }}>{r.cap}</small></div>
             </div>
