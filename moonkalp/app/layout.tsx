@@ -1,34 +1,34 @@
-
 import type { Metadata, Viewport } from "next";
-
-import type { Metadata } from "next";
-
-import { Archivo, Noto_Sans, Caveat } from "next/font/google";
+import { Bricolage_Grotesque, Instrument_Serif, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
-import Preloader from "@/components/Preloader";
+import Intro from "@/components/Intro";
+import SmoothScroll from "@/components/SmoothScroll";
+import Cursor from "@/components/Cursor";
 
-// McLaren Sans is proprietary, so these are the closest free stand-ins:
-// Archivo (wide axis) for display, Noto Sans for UI/body.
-const display = Archivo({ subsets: ["latin"], axes: ["wdth"], variable: "--f-d", display: "swap" });
-const body = Noto_Sans({ subsets: ["latin"], variable: "--f-b", display: "swap" });
-
-const hand = Caveat({ subsets: ["latin"], variable: "--f-h", display: "swap" });
+// Bricolage Grotesque (display + body, variable width/optical size),
+// Instrument Serif italics for accent words, Geist Mono for small labels.
+const display = Bricolage_Grotesque({ subsets: ["latin"], axes: ["opsz", "wdth"], variable: "--f-d", display: "swap" });
+const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--f-s", display: "swap" });
+const mono = Geist_Mono({ subsets: ["latin"], variable: "--f-m", display: "swap" });
 
 export const metadata: Metadata = {
   title: "MoonKalp · CreativeFlow Studio",
   description: "Motion graphics, video, social media, Meta ads, SEO, websites and custom web software, all under one roof.",
 };
 
-export const viewport: Viewport = { width: "device-width", initialScale: 1, viewportFit: "cover", themeColor: "#0a0a0a" };
+export const viewport: Viewport = { width: "device-width", initialScale: 1, viewportFit: "cover", themeColor: "#07070a" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} ${hand.variable}`}>
+    <html lang="en" className={`${display.variable} ${serif.variable} ${mono.variable}`}>
       <body>
-        <Preloader />
+        <SmoothScroll />
+        <Intro />
+        <Cursor />
         <Header />
         <main>{children}</main>
+        <div className="grain" aria-hidden />
       </body>
     </html>
   );
